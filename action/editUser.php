@@ -14,6 +14,7 @@ if (isset($_POST['edit'])) {
     $mp = $_POST['mp'];
     $mpCrypte = password_hash($mp, PASSWORD_DEFAULT);
     $avatar = "";
+    
 
     if (empty($mp)) {
         $_SESSION['flash']['error'] = "Veuillez saisir votre mot de passe.";
