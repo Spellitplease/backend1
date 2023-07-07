@@ -15,7 +15,7 @@ session_start();
 
 <body>
 	<?php include 'menu.php'; ?>
-	<div class="container-fluid">
+	<div class="container">
 		<?php if (isset($_SESSION['flash'])) : ?>
 			<?php foreach ($_SESSION['flash'] as $type => $message) : ?>
 				<div class="ms-1 me-3 alert alert-<?= $type; ?>">
@@ -24,23 +24,29 @@ session_start();
 			<?php endforeach; ?>
 			<?php unset($_SESSION['flash']); ?>
 		<?php endif; ?>
-		<h1>Inscription</h1>
+		<section class="col-6">
+		<h1 class="m-2">Inscription</h1>
 		<form action="../action/register.php" method="post">
 
-			<div class="m-2"><label for="nom">Votre nom</label>
-				<input type="text" name="nom">
+			<div class="m-2">
+				<label for="nom">Votre nom</label>
+				<input type="text" name="nom"  class="form-control">
 			</div>
 
-			<div class="m-2"><label for="mail">Votre email</label>
-				<input type="email" name="mail">
+			<div class="m-2">
+				<label for="mail">Votre email</label>
+				<input type="email" name="mail"  class="form-control">
 			</div>
 
-			<div class="m-2"><label for="mp">Votre mot de passe</label>
-				<input type="password" name="mp">
+			<div class="m-2">
+				<label for="mp">Votre mot de passe</label>
+				<input type="password" name="mp"  class="form-control">
 			</div>
 
-			<div class="m-2"><input type="submit" value="Envoyer" name="inscription"></div>
-		</form>
+			<div class="m-2">
+				<input class="btn btn-primary" type="submit" value="Envoyer" name="inscription"></div>
+			</form>
+			</section>
 	</div>
 
 </body>
